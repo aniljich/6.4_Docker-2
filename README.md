@@ -182,10 +182,10 @@ networks:
 
 Файл [docker-compose.yml](https://github.com/aniljich/6.4_Docker-2/blob/main/docker-compose.yml)
 
-Скриншот вывода docker ps: 
+Скриншот вывода docker ps:<br>
 ![dockerps](https://github.com/aniljich/6.4_Docker-2/blob/main/img/docker_ps.png)
 
-Скриншот графика, построенного на основе метрики: 
+Скриншот графика, построенного на основе метрики:<br>
 ![dashboard](https://github.com/aniljich/6.4_Docker-2/blob/main/img/dashboard.png)
 
 ---
@@ -203,5 +203,5 @@ networks:
 
 Команда для остановки и удаления контейнеров: ```docker compose down -v```
 
-Скриншот результата:
+Скриншот результата:<br>
 ![remove](https://github.com/aniljich/6.4_Docker-2/blob/main/img/remove.png)

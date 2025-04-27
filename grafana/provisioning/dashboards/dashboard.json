@@ -1,0 +1,18 @@
+{
+    "uid": "netology-ts",
+    "title": "Netology metric",
+    "schemaVersion": 38,
+    "version": 1,
+    "panels": [
+      {
+        "type": "timeseries",
+        "title": "Netology",
+        "datasource": "Prometheus",
+        "targets": [
+          { "expr": "AndreiKorotkov", "refId": "A" }
+        ],
+        "gridPos": { "x": 0, "y": 0, "w": 24, "h": 9 }
+      }
+    ]
+  }
+  
