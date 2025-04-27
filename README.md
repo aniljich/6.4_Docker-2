@@ -186,10 +186,10 @@ networks:
 
 ### Ответ 7
 
-Файл [docker-compose.yml](ссылка)
+Файл [docker-compose.yml](ссылкаhttps://github.com/aniljich/6.4_Docker-2/blob/main/docker-compose.yml)
 
 Скриншот вывода docker ps:\n
-[dockerps](../img/docker_ps.png)
+[dockerps](https://github.com/aniljich/6.4_Docker-2/blob/main/img/docker_ps.png)
 
 Скриншот графика, построенного на основе метрики:\n
-[dashboard](../img/dashboard.png)
+[dashboard](https://github.com/aniljich/6.4_Docker-2/blob/main/img/dashboard.png)
