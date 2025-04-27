@@ -1,0 +1,51 @@
+version: "3.9"
+
+networks:
+  korotkov-a-my-netology-hw:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+
+volumes:
+  prometheus_data:
+  grafana_data:
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.52.0
+    container_name: korotkov-a-netology-prometheus
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    networks:
+      - korotkov-a-my-netology-hw
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+
+  pushgateway:
+    image: prom/pushgateway:v1.7.0
+    container_name: korotkov-a-netology-pushgateway
+    networks:
+      - korotkov-a-my-netology-hw
+    ports:
+      - "9091:9091"
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:11.0.0
+    container_name: korotkov-a-netology-grafana
+    networks:
+      - korotkov-a-my-netology-hw
+    ports:
+      - "80:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/custom.ini:/etc/grafana/grafana.ini:ro
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+    depends_on:
+      - prometheus
+    restart: unless-stopped
